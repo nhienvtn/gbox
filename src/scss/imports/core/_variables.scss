@@ -1,0 +1,77 @@
+/* --------------------- Grid Media Queries Breakpoints --------------------- */
+$xxs-min: 576px; // Option change
+$xs-min: 768px; // No change
+$sm-min: 992px; // No change
+$md-min: 1200px; // No change
+$lg-min: 1600px; // Option change
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+/* ------------------------------ Boxed Layout ------------------------------ */
+$container-width: 1010px;
+$container-max-width: 1920px;
+
+/* ---------------------------------- Fonts --------------------------------- */
+$font-pn-light: "PN-Light", sans-serif;
+$font-pn-sbold: "PN-SBold", sans-serif;
+$font-pn-bold: "PN-Bold", sans-serif;
+$font-pn-regular: "PN-Regular", sans-serif;
+$font-pn-thin: "PN-Thin", sans-serif;
+$font-pn-ebold: "PN-EBold", sans-serif;
+$font-arial: "Arial", sans-serif;
+
+/* ---------------------------------- Color --------------------------------- */
+$color-primary: #ffde00;
+$color-white: #fff;
+$color-black: #000;
+$color-dark: #171717;
+$color-dark-v2: #525355;
+$color-dark-v3: #19191a;
+$color-dark-v4: #282828;
+$color-light: #f8f8f8;
+$color-light-v2: #898989;
+$color-header: #525355;
+
+$tcl-white: #fff;
+$tcl-dark: #171717;
+$tcl-dark-v2: #39382f;
+$tcl-dark-v3: #525355;
+$tcl-light: #f1f1f1;
+$tcl-light-v2: #baa697;
+$tcl-light-v3: #898989;
+
+/* ------------------------------- Fonts Style ------------------------------ */
+// $fs-heading-lv1: 8rem;
+// $fs-heading-lv2: 7.4rem;
+// $fs-heading-lv3: 7rem;
+// $fs-heading-lv4: 6rem;
+// $fs-heading-lv5: 4.8rem;
+$fs-heading-lv6: 3.6rem;
+
+// $fs-text-lv1: 3.2rem;
+// $fs-text-lv2: 3rem;
+// $fs-text-lv3: 2.6rem;
+// $fs-text-lv4: 2.5rem;
+// $fs-text-lv5: 2.2rem;
+// $fs-text-lv6: 2rem;
+// $fs-text-lv7: 1.8rem;
+// $fs-text-lv8: 1.6rem;
+// $fs-text-lv9: 1.4rem;
+
+$fs-body: 1.2rem;
+
+$fs-text-10: 1rem;
+$fs-text-11: 1.1rem;
+$fs-text-12: 1.2rem;
+$fs-text-14: 1.4rem;
+$fs-text-20: 2rem;
+$fs-text-23: 2.3rem;
+$fs-text-28: 2.8rem;
+
+$f-main: "avo", sans-serif;
+$f-avob: "avob", sans-serif;
+$f-dinea: "dinea", sans-serif;

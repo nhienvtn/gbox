@@ -1,0 +1,66 @@
+.about {
+    background-image: url(../img/bg-about.jpg);
+    background-position: center;
+    background-size: cover;
+    // background-color: rgb(78, 78, 78);
+    // position: relative;
+    .container {
+        padding: 10.06rem 0 7.4rem 0;
+        position: relative;
+        z-index: 99;
+    }
+    &__img {
+        display: none;
+    }
+    &__heading {
+        @include text($font-pn-bold, $color-primary, $fs-heading-lv6, null, uppercase, 5.8rem, 3rem);
+    }
+    &__content {
+        width: 85%;
+        @include text($font-pn-light, $tcl-light, 1.5rem, null, null, 4rem, 0.25px);
+        padding-top: 4rem;
+        padding-bottom: 6.5rem;
+    }
+    &__booking {
+        display: flex;
+        .booking-btn {
+            background-color: $color-primary;
+            a {
+                color: $tcl-dark;
+                span {
+                    color: $tcl-dark;
+                }
+            }
+        }
+        p {
+            @include text($font-pn-regular, $tcl-light, $fs-text-14, null, null, 2rem);
+            padding-left: 2rem;
+        }
+    }
+}
+
+@include xs {
+    .about {
+        background-image: url("../img/x.png");
+        background-color: $color-dark-v4;
+
+        .container {
+            padding: 12rem 0 7rem 0.9rem;
+        }
+        // &__img {
+        //     display: block;
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        //     height: max-content;
+        // }
+        &__content {
+            width: 90%;
+
+            padding: 0 0 6rem 1.5rem;
+        }
+        &__booking {
+            padding-left: 1.5rem;
+        }
+    }
+}

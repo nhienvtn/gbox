@@ -1,0 +1,73 @@
+.contact-info {
+    background-image: url(../img/bg-contact.jpg);
+    background-size: cover;
+    background-position: center;
+    .container {
+        @include flex(column, center, center, null);
+        padding-top: 9.6rem;
+        padding-bottom: 2rem;
+        .info {
+            padding-top: 3.6rem;
+            display: flex;
+            align-items: center;
+            p {
+                @include text($font-pn-regular, $tcl-light, $fs-text-12, null, uppercase, 3.4rem, null);
+            }
+            .address {
+                padding-right: 1.5rem;
+                text-align: right;
+            }
+            .contact {
+                padding-left: 1.5rem;
+            }
+        }
+        .arrow-down {
+            width: 1.4rem;
+            padding-top: 7rem;
+        }
+    }
+}
+@include xs {
+    .contact-info {
+        .container {
+            padding: 12.6rem 0 14rem 0;
+            img {
+                display: none;
+            }
+            .info {
+                flex-direction: column-reverse;
+                text-align: center;
+                .address {
+                    text-align: center;
+                    padding-right: 0;
+                }
+                .contact {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .contactft {
+        // margin-top: 0;
+        .container {
+            padding: 0;
+            display: none;
+        }
+        .footer__top {
+            margin: 0;
+        }
+        .footer__bottom {
+            .container {
+                .address {
+                    display: none;
+                }
+                .form {
+                    display: none;
+                }
+            }
+            .back-to-top {
+                padding-top: 5rem;
+            }
+        }
+    }
+}

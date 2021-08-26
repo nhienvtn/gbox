@@ -1,0 +1,156 @@
+.footer {
+    .container {
+        p {
+            @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, uppercase, 3.4rem, null);
+        }
+    }
+    &__top {
+        margin-top: 6rem;
+        display: flex;
+        .contact {
+            width: 50%;
+        }
+        .content {
+            width: 50%;
+        }
+    }
+    &__bottom {
+        background-color: $color-primary;
+        margin-top: 2.8rem;
+        .container {
+            display: flex;
+            padding-top: 3rem;
+            .address {
+                width: 50%;
+            }
+            .form {
+                width: 50%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                gap: 2rem;
+
+                &__group {
+                    label {
+                        display: block;
+                        @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, capitalize, null, null);
+                        padding-bottom: 1rem;
+                    }
+                    textarea {
+                        width: 100%;
+                        resize: none;
+                        outline: none;
+                        background-color: $color-primary;
+                        border: none;
+                        border-bottom: 1px solid $color-dark;
+                    }
+                    input {
+                        width: 100%;
+                        outline: none;
+                        border: none;
+                        background-color: $color-primary;
+                        border-bottom: 1px solid $color-dark;
+                    }
+                }
+                .left-col {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    row-gap: 1rem;
+                }
+                .right-col {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    row-gap: 1rem;
+                    .btn-send {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        @include transition(all 0.3s);
+                        a {
+                            padding: 1rem 1.3rem;
+                            background-color: $color-white;
+                            @include text($font-pn-bold, $tcl-dark, $fs-text-10, null, uppercase, nul, null);
+                            border: 1px solid $color-dark;
+                            &:hover {
+                                background-color: $color-dark;
+                                @include text($font-pn-bold, $tcl-white, $fs-text-10, null, uppercase, nul, null);
+                                @include transition(all 0.3s);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .back-to-top {
+            @include flex(column, center, center);
+            padding: 5rem 0 13.4rem 0;
+            a {
+                img {
+                    padding-bottom: 2rem;
+                    width: 1.4rem;
+                }
+            }
+            p {
+                @include text($font-pn-regular, $tcl-dark, $fs-text-10, null, uppercase, null, null);
+            }
+        }
+    }
+}
+.totop {
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+    opacity: 0;
+    @include transition(all 0.3s);
+    img {
+        width: 2rem;
+    }
+    &.active {
+        opacity: 1;
+        @include transition(all 0.3s);
+        cursor: pointer;
+    }
+}
+@include xs {
+    .footer {
+        .container {
+            padding: 5.6rem 0 4rem 0;
+        }
+        &__top {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .contact {
+                text-align: center;
+                // padding-bottom: 4.2rem;
+            }
+            .content {
+                display: none;
+            }
+        }
+        &__bottom {
+            .container {
+                .form {
+                    display: none;
+                }
+                .address {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+            .back-to-top {
+                img {
+                    padding-bottom: 3rem;
+                }
+                padding-bottom: 14.5rem;
+            }
+        }
+    }
+}

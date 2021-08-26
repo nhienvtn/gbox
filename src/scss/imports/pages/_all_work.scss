@@ -1,0 +1,69 @@
+.workpage {
+    .project {
+        .container {
+            .bottom {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 7rem;
+                position: relative;
+                .filter__btn {
+                    span {
+                        @include text($font-pn-sbold, $tcl-dark, $fs-text-12, null, null);
+                    }
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    // top: 50%;
+                    @include transform(translateX(-50%));
+                    margin-top: 0;
+                }
+                .booking {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    p {
+                        @include text($font-pn-regular, $tcl-dark-v2, $fs-text-14, null, null, 2rem);
+                        padding-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include xs {
+    .workpage {
+        .project {
+            .container {
+                padding: 12rem 0 7rem 0.9rem;
+                &__menu {
+                    opacity: 1;
+                }
+                &__list {
+                    grid-template-columns: 1fr;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .bottom {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    gap: 2rem;
+                    .filter__btn {
+                        grid-row: 2/3;
+                    }
+                    .booking {
+                        margin: 0 auto;
+                        flex-direction: column-reverse;
+                        grid-row: 1/2;
+                        align-items: center;
+                        padding-bottom: 6.7rem;
+                        p {
+                            text-align: center;
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

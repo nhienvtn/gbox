@@ -1,0 +1,198 @@
+.rental {
+    .container {
+        display: flex;
+        padding-bottom: 8rem;
+        border-bottom: 1px solid $color-dark;
+        .rental-banner {
+            background-color: $color-header;
+            height: 50%;
+            .item {
+                padding: 7.4rem 7.5rem 30rem 2rem;
+
+                &__text {
+                    h2 {
+                        padding: 3rem 0;
+                        @include text($font-pn-ebold, $tcl-light, 3.2rem, null, capitalize, null, null);
+                    }
+                    h3 {
+                        @include text($font-pn-regular, $tcl-light, $fs-text-12, null, uppercase, null, null);
+                        padding-bottom: 1.8rem;
+                    }
+                    p {
+                        @include text($font-pn-regular, $tcl-light, $fs-text-14, null, null, 2rem);
+                    }
+                }
+            }
+        }
+        .rental-form {
+            width: 100%;
+            @include text($font-pn-regular, $color-dark, $fs-text-12, null, capitalize, 4rem, null);
+            padding: 7.4rem 0 0 7rem;
+            h3 {
+                @include text($font-pn-ebold, $color-dark, $fs-text-28, null, capitalize, null, null);
+                padding-bottom: 5rem;
+            }
+            .company-detail {
+                width: 100%;
+                .company {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .col {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .left {
+                    // width: 100%;
+                    margin-right: 8rem;
+                }
+            }
+            .booking-detail {
+                .studio-box {
+                    span {
+                        cursor: pointer;
+                        display: inline-block;
+                        margin-right: 2rem;
+                        padding: 0.5rem 1rem;
+                        background-color: $color-header;
+                        @include text($font-pn-regular, $tcl-light, 2rem, null, capitalize, null, null);
+                        border: 1px solid transparent;
+
+                        @include transition(all 0.3s);
+                        &:hover,
+                        &.active {
+                            @include transition(all 0.3s);
+                            border: 1px solid $color-dark;
+                            background-color: $color-primary;
+                            @include text($font-pn-regular, $tcl-dark, 2rem, null, capitalize, null, null);
+                        }
+                    }
+                }
+                input {
+                    padding: 1rem;
+                    border: 1px solid $color-dark;
+                }
+                .booking {
+                    .requirements {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: nowrap;
+                        .col {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .left {
+                            margin-right: 8rem;
+                        }
+                        .right {
+                            p {
+                                font-style: italic;
+                            }
+                        }
+                    }
+                    .date {
+                        padding-bottom: 2.7rem;
+                        display: flex;
+                        // justify-content: space-between;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        .wrapdate {
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            justify-content: space-between;
+                            .col {
+                                width: 100%;
+                            }
+                            .left {
+                                margin-right: 3.3rem;
+                            }
+                            .right {
+                                margin-left: 3.3rem;
+                            }
+                            input[type="date"] {
+                                @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, null, null, null);
+                            }
+                        }
+                        img {
+                            transform: rotate(-90deg);
+                            width: 1.4rem;
+                        }
+                    }
+                }
+            }
+            .booking-bottom {
+                padding-top: 6.8rem;
+                display: flex;
+                .booking-btn {
+                    a {
+                        padding: 2rem 1rem;
+                        font-size: 1.5rem;
+                    }
+                }
+                p {
+                    padding-left: 2rem;
+                    line-height: 2rem;
+                }
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    .rental {
+        .container {
+            padding-top: 7rem;
+            flex-direction: column;
+            .rental-banner {
+                background-color: #fff;
+                .item {
+                    display: flex;
+                    padding: 0;
+                    &__text {
+                        padding-left: 3rem;
+                        h2,
+                        h3,
+                        p {
+                            color: $tcl-dark;
+                        }
+                    }
+                }
+            }
+            .rental-form {
+                padding-left: 0;
+                .company,
+                .requirements {
+                    flex-direction: column;
+                    .col {
+                        display: block;
+                    }
+                }
+                .booking-detail {
+                    .booking {
+                        .date {
+                            flex-direction: column;
+                            align-items: center;
+                            .left {
+                                // margin-left: 0;
+                                margin-right: 0;
+                            }
+                            .right {
+                                margin-left: 0;
+                            }
+                            img {
+                                padding: 2rem 0;
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

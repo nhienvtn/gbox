@@ -1,0 +1,143 @@
+.studio {
+    .container {
+        border-bottom: 1px solid $color-dark;
+        .studio-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 2.2rem;
+            padding: 7.4rem 0 10rem 0;
+            .studio-item {
+                overflow: hidden;
+                &__image {
+                    display: block;
+                    overflow: hidden;
+                    img {
+                        @include transition(all 0.3s);
+                        filter: brightness(0.3);
+                    }
+                }
+                &__des {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .text {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        padding-top: 4rem;
+                        width: -webkit-fill-available;
+                        cursor: pointer;
+                        background-color: $color-white;
+                        @include transition(all 0.3s);
+                        a {
+                            @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, uppercase, 2rem, null);
+                        }
+                        .dimensions {
+                            display: flex;
+                            flex-direction: column;
+                            span {
+                                text-transform: none;
+                            }
+                        }
+                        .detail {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            h3 {
+                                @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, uppercase, 2rem, null);
+                            }
+                            span {
+                                padding-top: 1rem;
+                                width: 1.4rem;
+                                svg {
+                                    @include transition(all 0.3s);
+                                    width: 1rem;
+                                }
+                            }
+                        }
+                        // &.hover {
+                        //     @include transition(all 0.3s);
+                        //     background-color: $color-header;
+
+                        // }
+                    }
+                }
+                &:hover {
+                    .studio-item__image {
+                        img {
+                            @include transition(all 0.3s);
+                            @include transform(scale(1.1));
+                            filter: brightness(1);
+                        }
+                    }
+                    .studio-item__des {
+                        .text {
+                            background: $color-header;
+                            a,
+                            h3 {
+                                color: $tcl-light;
+                            }
+                            .detail {
+                                span {
+                                    svg {
+                                        fill: $color-primary;
+                                        @include transition(all 0.3s);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include sm {
+    .studio {
+        .container {
+            padding-top: 8rem;
+            .studio-list {
+                .studio-item {
+                    padding-bottom: 4rem;
+                    .text {
+                        padding-top: 2rem;
+                        padding-bottom: 2rem;
+                        .detail {
+                            h3 {
+                                opacity: 0;
+                            }
+                            img {
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include xs {
+    .studio {
+        .container {
+            .studio-list {
+                grid-template-columns: 1fr;
+                .studio-item {
+                    img {
+                        width: 100%;
+                    }
+                    .text {
+                        padding-top: 2rem;
+                        padding-bottom: 2rem;
+                        width: 100%;
+                    }
+                    &__image {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

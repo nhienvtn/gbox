@@ -1,0 +1,78 @@
+.intro {
+    margin-top: 6rem;
+    .container {
+        @include flex(column, center, center);
+    }
+    &__sub-title {
+        @include text($font-pn-light, inherit, $fs-text-14, null, uppercase, 2.2rem, 0.2rem);
+        max-width: 9rem;
+        text-align: center;
+    }
+    &__title {
+        @include text($font-pn-bold, $tcl-dark-v3, $fs-text-20, null, uppercase, null, 0.3rem);
+        background-color: $color-primary;
+        margin: 2.5rem 0;
+    }
+    &__desc {
+        position: relative;
+        @include text($font-arial, inherit, $fs-body, null, null, 2.2rem, null);
+        max-width: 74%;
+        text-align: center;
+        padding-bottom: 5.7rem;
+        span {
+            font-weight: bold;
+        }
+        &::before {
+            @include pseudo();
+            @include size(40%, 0.1rem);
+            background-color: $color-dark;
+            left: 50%;
+            bottom: 0;
+            @include transform(translateX(-50%));
+        }
+    }
+}
+
+.project {
+    margin-top: 4rem;
+    .filter__btn {
+        margin-top: 7rem;
+    }
+    .container {
+        padding-bottom: 7rem;
+        border-bottom: 1px solid $color-dark;
+    }
+}
+
+@include xs {
+    .homepage {
+        .intro {
+            margin-top: 0;
+            .container {
+                padding-top: 12rem;
+            }
+            &__title {
+                margin-bottom: 3rem;
+            }
+            &__desc {
+                display: none;
+            }
+        }
+
+        .project {
+            margin-top: 0;
+            &__menu {
+                display: none;
+            }
+            &__list {
+                grid-template-columns: 1fr;
+                img {
+                    width: 100%;
+                }
+            }
+            .container {
+                padding-bottom: 4rem;
+            }
+        }
+    }
+}

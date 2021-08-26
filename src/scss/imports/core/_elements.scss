@@ -1,0 +1,90 @@
+.hidden {
+    display: none;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.btn__view-all {
+    @include flex(column, center, center);
+    img {
+        width: 1.4rem;
+    }
+    span {
+        padding-bottom: 2rem;
+        @include text($font-pn-sbold, $tcl-dark, null, null, uppercase);
+    }
+}
+.booking-btn {
+    background-color: $color-header;
+    width: max-content;
+    border-radius: 8px;
+    @include transition(all 0.3s);
+
+    a {
+        padding: 2.5rem 1.5rem;
+    }
+    span {
+        font-size: $fs-text-23;
+    }
+    a,
+    span {
+        @include transition(all 0.3s);
+        @include text($font-pn-ebold, $color-primary, $fs-text-20, bold, uppercase, null, null);
+        display: block;
+    }
+    &:hover {
+        @include transition(all 0.3s);
+        background-color: $color-primary;
+        a,
+        span {
+            @include transition(all 0.3s);
+            color: $color-dark;
+        }
+    }
+}
+.number {
+    @include text($font-pn-regular, $tcl-dark, $fs-text-11, null, uppercase, null, null);
+    text-align: center;
+    display: block;
+    padding: 2.9rem 3.8rem;
+    background-color: $color-primary;
+    span {
+        padding-top: 1rem;
+        @include text($font-pn-bold, $tcl-dark, 6rem, null, uppercase, null, null);
+        display: block;
+    }
+}
+
+@include sm {
+    .number {
+        padding: 1rem 1.5rem 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span {
+            padding-top: 3px;
+            font-size: 4rem;
+        }
+    }
+}
+@include xs {
+    .number {
+        padding: 2.9rem 3.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span {
+            padding-top: 3px;
+            font-size: 4rem;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.view {
+    .container {
+        padding-bottom: 8.5rem;
+        border-bottom: 1px solid $color-dark;
+        .top-img {
+            padding: 6rem 0 4rem 0;
+            display: flex;
+            justify-content: space-between;
+            .name-project {
+                @include text($font-pn-light, $tcl-dark, $fs-text-14, null, uppercase, null, null);
+            }
+            .back {
+                display: flex;
+                justify-content: center;
+                span {
+                    @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, capitalize, null, null);
+                }
+                img {
+                    margin-left: 3rem;
+                    width: 1.4rem;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            h3 {
+                @include text($font-pn-light, $tcl-dark, $fs-text-14, null, uppercase, null, null);
+                padding: 3.7rem 0 2.1rem 0;
+            }
+            p {
+                @include text($font-pn-regular, $tcl-dark, $fs-text-12, null, null, null, null);
+            }
+            span {
+                font-style: italic;
+            }
+            .project-des {
+                width: 35%;
+            }
+            .team {
+                margin-right: 7.7rem;
+            }
+        }
+    }
+}
+
+@include xs {
+    .view {
+        .container {
+            padding-top: 5rem;
+            .top-img {
+                padding-bottom: 3rem;
+            }
+            .detail {
+                flex-direction: column;
+                .project-des {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

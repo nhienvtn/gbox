@@ -1,0 +1,107 @@
+// Filter
+.filter {
+    &__menu {
+        @include flex(null, center, center);
+        a {
+            @include text($font-pn-sbold, $tcl-light-v3, $fs-body, null, uppercase);
+            padding: 1rem 2.2rem;
+            @include transition(all 0.3s);
+            &.active,
+            &:hover {
+                color: $color-dark;
+            }
+        }
+    }
+    &__list {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 6.2rem;
+        &-item {
+            .img {
+                img {
+                    @include transition(all 0.3s);
+                }
+                overflow: hidden;
+            }
+            .content {
+                @include flex(column, center, center);
+                margin-top: 3.4rem;
+                &__title {
+                    position: relative;
+                    @include text($font-pn-bold, $tcl-dark, inherit, null, uppercase, null, null);
+                    padding-bottom: 1rem;
+                    &::before {
+                        @include pseudo();
+                        width: 30%;
+                        height: 0.4rem;
+                        background-color: $color-primary;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: 1rem;
+                        @include transform(translate(-50%));
+                    }
+                }
+                p {
+                    padding-top: 1rem;
+                    @include text($font-pn-regular, $tcl-dark, $fs-body, null, capitalize, null);
+                    font-weight: bold;
+                    em {
+                        font-style: italic;
+                    }
+                }
+            }
+            &:hover {
+                .img {
+                    img {
+                        @include transition(all 0.3s);
+                        @include transform(scale(1.1));
+                    }
+                }
+            }
+        }
+    }
+}
+.form {
+    .form-group {
+        label {
+            display: block;
+        }
+
+        textarea.form-control {
+            width: 100%;
+            resize: none;
+            outline: none;
+            background-color: $color-white;
+
+            border: 1px solid $color-dark;
+        }
+        input.form-control {
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: $color-white;
+            border-bottom: 1px solid $color-dark;
+        }
+    }
+}
+@include xs {
+    .filter {
+        &__menu {
+            opacity: 1;
+            padding-bottom: 5rem;
+        }
+        &__list {
+            grid-template-columns: 1fr;
+            &-item {
+                .img {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
